@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/storage1289x840.png">
+    <title>soultions babe</title>
+</head>
+<body>
+    <header>
+        <h1>you are welcome</h1>
+        <nav>
+            <li><a href="#sessional1">sessional 1</a>
+            <aside>
+                <details>
+                    <summary>papers</summary>
+                    <ul>
+                        <li><a href="#dsa">DS</a></li>
+                        <li><a href="#ps">PS</a></li>
+                    </ul>
+                </details>
+            </aside>
+            </li>
+            <!-- <li><a href="#sessional2"></a></li>
+            <li><a href="#sessional3"></a></li> -->
+        </nav>
+    </header>
+    <main>
+
+        <!--add questions and ansewers to them here 
+        we are going to add multiple questions and their answers
+        but for now we arent going to take input.        
+        -->
+        <hr>
+        <section id="sessional1">
+            <p> <strong>Q1.</strong>
+            Design a hydrid sortng algorithm that combines the strengths of insertion sort and qucksort. Provide a detailed explaination of how the two algorithms are integrated to achive performance in terms of time complexity.
+            </p>
+            <code>
+                // i have no idea how to do this 
+            </code>
+
+            <p>
+                <strong>Q2.</strong>
+                You have a sorted arry called A of integres with N elements. Write a function that returns a sorted arry containing the squares of those integres.<br>
+                Examples: <br>
+                &ensp;&ensp;Input: [-7,-3,-1,4,8,12] &ensp;&ensp; Output: [1,5,16,49,64,144] <br>
+                &ensp;&ensp;Input: [1,2,3]&ensp;&ensp;Output: [1,4,9] <br>
+                &ensp;&ensp;Input[-3,-2,-1]&ensp;&ensp;Output:[1,4,9]
+            </p>
+            <code>
+                <em>// we have to write jsut the function not the whole program</em><br>
+                void sortSquare(int a[], int length){
+                    <br> &ensp;&ensp; for(int i = 0; i &lt length - 1; i++){ 
+                        <br> &ensp;&ensp; a[i] = a[i] * a[i]; 
+                        <br>
+                        &ensp;&ensp;&ensp;}<br>
+                        &ensp;&ensp;&ensp;for(int i = 0; i &lt; length - 1; i++) <br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp; for(int j = 0; j &lt length - i - 1; i++) &ensp;&ensp;&ensp;&ensp;&ensp; <br> 
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if (a[j] > a[j + 1]){ <br>
+                            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;int temp = a[j]; <br> 
+                            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;a[j] = a[j + 1]; <br>
+                            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;a[j + 1] =  temp;<br>
+                            
+                        <br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;}
+                         <br>
+                }
+            </code>
+
+            <p>
+                <strong>Q3.</strong> Write a program for inserting an element to the middle of the<br>
+                &ensp;&ensp;&ensp;&ensp; <b>a.</b> Arry<br>
+                &ensp;&ensp;&ensp;&ensp; <b>b.</b> Linked list<br>
+                &ensp;also, compare the time complexities  of these operaitions and justify any observed differences. <br>
+            </p>
+            
+            <code>
+                <b><em>a.</em></b>
+                <br>#include &lt;stdio.h&gt; <br> <br>
+                void insert_mid(int a[], int length, int element
+                ){<br>
+                    &ensp;&ensp;&ensp;&ensp;int mid = length/2; <br>
+                    &ensp;&ensp;&ensp;&ensp;for(int i = length - 1; i &lt mid; i--){ <br>
+                        &ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;a[i + 1] = a[i]; <br>
+                        &ensp;&ensp;&ensp;&ensp;}<br>
+                        &ensp;&ensp;&ensp;&ensp;a[mid] = element;<br>
+                        &ensp;&ensp;&ensp;&ensp;length++;
+                <br>}<br>
+                int main(){<br>
+                &ensp;&ensp;&ensp;&ensp;int a[1000], length; <br>
+                &ensp;&ensp;&ensp;&ensp;printf("enter no of elements: "); <br>
+                &ensp;&ensp;&ensp;&ensp;scanf("%d",&lenght);<br>
+                &ensp;&ensp;&ensp;&ensp;printf("enter elements: ");<br>
+                &ensp;&ensp;&ensp;&ensp;for(int i = 0; i &lt; lenght; i++) scanf("%d",&a[i]);<br>
+                &ensp;&ensp;&ensp;&ensp;int element;<br>
+                &ensp;&ensp;&ensp;&ensp;printf("enter element to nsert at mid: ");<br>
+                &ensp;&ensp;&ensp;&ensp;scanf("%d",&element);<br>
+                &ensp;&ensp;&ensp;&ensp;insert_mid(a, length, element);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i &lt; length; i++) printf("%d ",a[i]);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return 0;
+                <br>}
+            </code>
+            
+            <code>
+            <p>
+                <b><em>b.</em></b><br>
+
+
+                
+    #include &lt;stdio.h&gt;<br>
+    #include &lt;stdlib.h&gt;<br><br>
+    struct Node{<br>    
+    int data;<br>    
+    struct Node* next;<br>};
+    <br>typedef struct Node Node;<br>
+    Node *head = NULL;<br><br>
+    // insert test case link list<br>
+    void insert(int x){<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;Node *newNode = (Node*)(malloc(sizzeof(Node)));<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;newNode -&gt; data = x;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;newNode -&gt; next = head -&gt; next;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;head = newNode;<br>}<br><br>void insert_mid(int x){<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;Node * temp = head, temp1 = head, temp2 = head -&gt; next;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;int count = 0;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;while(temp -&gt; next != NULL){<br>       
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp = temp -&gt; next;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;count++;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i &lt; count - 2; i++){<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;temp1 = temp -&gt; next;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;temp2 = temp -&gt; next;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;Node *newNode = (Node*)(malloc(sizzeof(Node)));<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;newNode -&gt; data = x;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;temp1 -&gt; next = newNode;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;newNode -&gt; next = temp2;<br>}<br>int main(){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; length, x;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;printf("enter no of elements: ");<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;lenght);<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;printf("enter elements: ");<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i &lt; lenght; i++){<br>        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;x);<br>        
+        &nbsp;&nbsp;&nbsp;&nbsp;insert(x);<br>    }<br><br>    int mide;<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;printf("enter element to insert at mid);<br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;scanf("%d", &amp;mide);<br><br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;insert_mid(mide);<br>    <br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;for(Node *temp = head; temp != NULL; temp = temp -&gt; next)<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d ",temp -&gt; data);<br>        
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>}
+
+
+
+
+            </p>
+            </code>
+            
+        </section>
+
+
+    </main>
+    <footer>
+        <hr>
+        <p>If you are intrested to help here is <a href="https://github.com/dioskit/we-are-here-to-help.git">link to our github code feel free to fork</a></p>
+        
+        <p>By dIOskIT</p>
+
+    </footer>
+    
+</body>
+</html>

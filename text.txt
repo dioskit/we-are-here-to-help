@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+    int data;
+    struct Node* next;
+};
+typedef struct Node Node;
+Node *head = NULL;
+
+// insert test case link list
+void insert(int x){
+    Node *newNode = (Node*)(malloc(sizzeof(Node)));
+    newNode -> data = x;
+    newNode -> next = head -> next;
+    head = newNode;
+}
+
+void insert_mid(int x){
+    Node * temp = head, temp1 = head, temp2 = head -> next;
+    int count = 0;
+    while(temp -> next != NULL){
+        temp = temp -> next;
+        count++;
+    }
+
+    for(int i = 0; i < count - 2; i++){
+        temp1 = temp -> next;
+        temp2 = temp -> next;
+    }
+    Node *newNode = (Node*)(malloc(sizzeof(Node)));
+    newNode -> data = x;
+    temp1 -> next = newNode;
+    newNode -> next = temp2;
+}
+int main(){
+    int length, x;
+    printf("enter no of elements: ");
+    scanf("%d",&lenght);
+    printf("enter elements: ");
+    for(int i = 0; i < lenght; i++){
+        scanf("%d",&x);
+        insert(x);
+    }
+
+    int mide;
+    printf("enter element to insert at mid);
+    scanf("%d", &mide);
+
+    insert_mid(mide);
+    
+    for(Node *temp = head; temp != NULL; temp = temp -> next)
+        printf("%d ",temp -> data);
+        
+    return 0;
+}
