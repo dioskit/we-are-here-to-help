@@ -7,6 +7,9 @@ thank you commit 1.
 *************************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
+
+void copy(char *s);
 
 int main() {
     // Open the input file in read mode
@@ -27,7 +30,7 @@ int main() {
     }
 
     // Write HTML header to the output file
-    fprintf(outputFile, "<!DOCTYPE html>\n<html>\n<head>\n<title>Your Title</title>\n</head>\n<body>\n");
+    fprintf(outputFile, "\n <code> ");
 
     // Process the content of the input file
     int c;
@@ -54,9 +57,8 @@ int main() {
     }
 
     // Write HTML footer to the output file
-    fprintf(outputFile, "</body>\n</html>");
+    fprintf(outputFile, "\n </code>");
 
-    // Close the files
     fclose(inputFile);
     fclose(outputFile);
 
@@ -64,3 +66,4 @@ int main() {
 
     return 0;
 }
+
