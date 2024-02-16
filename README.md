@@ -8,6 +8,8 @@ and future plan is to add all subjects' eventually
 FONTS TO USE
 - not decided yet
 - most likely to use hevelectica
+- suggesting others
+
 
 CSS PART
 - if you know css write such that code cna be viewed in mobile phone and tablets
