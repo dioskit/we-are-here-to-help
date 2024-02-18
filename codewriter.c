@@ -49,7 +49,7 @@ int main() {
                 fprintf(outputFile, "&nbsp;&nbsp;&nbsp;&nbsp;");
                 break;
             case '\n':
-                fprintf(outputFile, "<br>");
+                fprintf(outputFile, "<br>\n");
                 break;
             default:
                 fputc(c, outputFile);

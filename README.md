@@ -14,3 +14,7 @@ FONTS TO USE
 CSS PART
 - if you know css write such that code cna be viewed in mobile phone and tablets
 - add more instructions.
+
+
+### here is a poster of brook
+![image](images/Wanted%20Brook-%20635x935.jpg)
